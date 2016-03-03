@@ -171,6 +171,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *notSentButton;
 
 @property (strong, nonatomic) IBOutlet UIView *cellPendingView;
+@property (strong, nonatomic) IBOutlet UIImageView *sentIcon;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *sentIconLeading;
 
 #pragma mark - Class methods
 

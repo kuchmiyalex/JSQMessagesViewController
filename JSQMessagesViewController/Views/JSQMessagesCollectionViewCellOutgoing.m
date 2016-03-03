@@ -25,9 +25,10 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    self.messageBubbleTopLabel.textAlignment = NSTextAlignmentRight;
+    self.messageBubbleTopLabel.textAlignment = NSTextAlignmentLeft;
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
     [self.notSentButton setImage: [UIImage imageNamed: @"not_sent"] forState: UIControlStateNormal];
+    self.sentIcon.image = [UIImage imageNamed: @"sent"];
 }
 
 @end
