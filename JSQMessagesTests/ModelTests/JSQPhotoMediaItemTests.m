@@ -65,12 +65,12 @@
     JSQPhotoMediaItem *item = [[JSQPhotoMediaItem alloc] initWithImage:nil];
     
     XCTAssertTrue(!CGSizeEqualToSize([item mediaViewDisplaySize], CGSizeZero));
-    XCTAssertNotNil([item mediaPlaceholderView]);
-    XCTAssertNil([item mediaView], @"Media view should be nil if image is nil");
+    XCTAssertNotNil([item mediaPlaceholderViewWithBubbleImage:nil]);
+    XCTAssertNil([item mediaViewWithBubbleImage:nil], @"Media view should be nil if image is nil");
     
     item.image = [UIImage imageNamed:@"demo_avatar_jobs"];
     
-    XCTAssertNotNil([item mediaView], @"Media view should NOT be nil once item has media data");
+    XCTAssertNotNil([item mediaViewWithBubbleImage:nil], @"Media view should NOT be nil once item has media data");
 }
 
 @end
