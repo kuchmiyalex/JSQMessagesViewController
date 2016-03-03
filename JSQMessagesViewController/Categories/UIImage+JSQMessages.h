@@ -78,4 +78,7 @@
 
 + (UIImage *)jsq_defaultMicImage;
 
++ (UIImage *)jsq_notSentIconImage;
++ (UIImage *)jsq_sentIconImage;
+
 @end

@@ -17,6 +17,7 @@
 //
 
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+#import "UIImage+JSQMessages.h"
 
 @implementation JSQMessagesCollectionViewCellOutgoing
 
@@ -27,8 +28,8 @@
     [super awakeFromNib];
     self.messageBubbleTopLabel.textAlignment = NSTextAlignmentLeft;
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
-    [self.notSentButton setImage: [UIImage imageNamed: @"not_sent"] forState: UIControlStateNormal];
-    self.sentIcon.image = [UIImage imageNamed: @"sent"];
+    [self.notSentButton setImage: [UIImage jsq_notSentIconImage] forState: UIControlStateNormal];
+    self.sentIcon.image = [UIImage jsq_sentIconImage];
 }
 
 @end

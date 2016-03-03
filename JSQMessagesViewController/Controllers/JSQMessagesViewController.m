@@ -520,8 +520,8 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
 
-    CGFloat bubbleTopLabelInset = (avatarImageDataSource != nil) ? 60.0f : 15.0f;
-
+    CGFloat bubbleTopLabelWidth = [cell.messageBubbleTopLabel.attributedText boundingRectWithSize: CGSizeMake(999, kJSQMessagesCollectionViewCellLabelHeightDefault) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size.width;
+    cell.sentIconLeading.constant = bubbleTopLabelWidth + 5;
 //    if (isOutgoingMessage) {
 //        cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, bubbleTopLabelInset);
 //    }

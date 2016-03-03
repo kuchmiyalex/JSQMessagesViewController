@@ -105,4 +105,14 @@
     return [UIImage jsq_bubbleImageFromBundleWithName:@"play"];
 }
 
++ (UIImage *)jsq_notSentIconImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"not_sent"];
+}
++ (UIImage *)jsq_sentIconImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"sent"];
+}
+
+
 @end
