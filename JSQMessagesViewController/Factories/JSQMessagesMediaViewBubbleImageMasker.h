@@ -87,4 +87,6 @@
  */
 + (void)applyBubbleImageMaskToMediaView:(UIView *)mediaView isOutgoing:(BOOL)isOutgoing;
 
+- (void)jsq_maskView:(UIView *)view withImage:(UIImage *)image;
+
 @end

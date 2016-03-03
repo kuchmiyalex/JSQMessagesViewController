@@ -74,7 +74,7 @@
 
 #pragma mark - JSQMessageMediaData protocol
 
-- (UIView *)mediaView
+- (UIView *)mediaViewWithBubbleImage:(UIImage *)bubbleImage
 {
     if (self.fileURL == nil || !self.isReadyToPlay) {
         return nil;
@@ -89,7 +89,8 @@
         imageView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
         imageView.contentMode = UIViewContentModeCenter;
         imageView.clipsToBounds = YES;
-        [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:imageView isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        JSQMessagesMediaViewBubbleImageMasker* masker = [[JSQMessagesMediaViewBubbleImageMasker alloc] init];
+        [masker jsq_maskView: imageView withImage: bubbleImage];
         self.cachedVideoImageView = imageView;
     }
     

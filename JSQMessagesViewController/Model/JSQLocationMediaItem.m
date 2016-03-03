@@ -136,7 +136,7 @@
 
 #pragma mark - JSQMessageMediaData protocol
 
-- (UIView *)mediaView
+- (UIView *)mediaViewWithBubbleImage:(UIImage *)bubbleImage
 {
     if (self.location == nil || self.cachedMapSnapshotImage == nil) {
         return nil;
@@ -146,7 +146,8 @@
         UIImageView *imageView = [[UIImageView alloc] initWithImage:self.cachedMapSnapshotImage];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
-        [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:imageView isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        JSQMessagesMediaViewBubbleImageMasker* masker = [[JSQMessagesMediaViewBubbleImageMasker alloc] init];
+        [masker jsq_maskView: imageView withImage: bubbleImage];
         self.cachedMapImageView = imageView;
     }
     

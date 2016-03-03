@@ -65,7 +65,7 @@
 
 #pragma mark - JSQMessageMediaData protocol
 
-- (UIView *)mediaView
+- (UIView *)mediaViewWithBubbleImage:(UIImage *)bubbleImage
 {
     if (self.image == nil) {
         return nil;
@@ -77,7 +77,8 @@
         imageView.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
-        [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:imageView isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        JSQMessagesMediaViewBubbleImageMasker* masker = [[JSQMessagesMediaViewBubbleImageMasker alloc] init];
+        [masker jsq_maskView: imageView withImage: bubbleImage];
         self.cachedImageView = imageView;
     }
     

@@ -77,7 +77,7 @@
 
 #pragma mark - JSQMessageMediaData protocol
 
-- (UIView *)mediaView
+-(UIView *)mediaViewWithBubbleImage:(UIImage *)bubbleImage
 {
     NSAssert(NO, @"Error! required method not implemented in subclass. Need to implement %s", __PRETTY_FUNCTION__);
     return nil;
@@ -92,13 +92,13 @@
     return CGSizeMake(210.0f, 150.0f);
 }
 
-- (UIView *)mediaPlaceholderView
-{
+-(UIView *)mediaPlaceholderViewWithBubbleImage:(UIImage *)bubbleImage {
     if (self.cachedPlaceholderView == nil) {
         CGSize size = [self mediaViewDisplaySize];
         UIView *view = [JSQMessagesMediaPlaceholderView viewWithActivityIndicator];
         view.frame = CGRectMake(0.0f, 0.0f, size.width, size.height);
-        [JSQMessagesMediaViewBubbleImageMasker applyBubbleImageMaskToMediaView:view isOutgoing:self.appliesMediaViewMaskAsOutgoing];
+        JSQMessagesMediaViewBubbleImageMasker* masker = [[JSQMessagesMediaViewBubbleImageMasker alloc] init];
+        [masker jsq_maskView: view withImage: bubbleImage];
         self.cachedPlaceholderView = view;
     }
     
@@ -140,7 +140,7 @@
 
 - (id)debugQuickLookObject
 {
-    return [self mediaView] ?: [self mediaPlaceholderView];
+    return [self mediaViewWithBubbleImage: nil] ?: [self mediaPlaceholderViewWithBubbleImage:nil];
 }
 
 #pragma mark - NSCoding

@@ -43,10 +43,10 @@
  *
  *  @discussion You may return `nil` from this method while the media data is being downloaded.
  */
-- (UIView *)mediaView;
+- (UIView *)mediaViewWithBubbleImage:(UIImage*) bubbleImage;
 
 /**
- *  @return The frame size for the mediaView when displayed in a `JSQMessagesCollectionViewCell`. 
+ *  @return The frame size for the mediaView when displayed in a `JSQMessagesCollectionViewCell`.
  *
  *  @discussion You should return an appropriate size value to be set for the mediaView's frame
  *  based on the contents of the view, and the frame and layout of the `JSQMessagesCollectionViewCell`
@@ -68,7 +68,7 @@
  *
  *  @see JSQMessagesMediaPlaceholderView.
  */
-- (UIView *)mediaPlaceholderView;
+- (UIView *)mediaPlaceholderViewWithBubbleImage:(UIImage*) bubbleImage;
 
 /**
  *  @return An integer that can be used as a table address in a hash table structure.
@@ -77,5 +77,6 @@
  *  This value is used to cache layout information in the collection view.
  */
 - (NSUInteger)mediaHash;
+
 
 @end

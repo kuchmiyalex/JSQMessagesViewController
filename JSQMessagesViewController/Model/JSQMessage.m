@@ -135,7 +135,7 @@
 
 - (id)debugQuickLookObject
 {
-    return [self.media mediaView] ?: [self.media mediaPlaceholderView];
+    return [self.media mediaViewWithBubbleImage: nil] ?: [self.media mediaPlaceholderViewWithBubbleImage:nil];
 }
 
 #pragma mark - NSCoding

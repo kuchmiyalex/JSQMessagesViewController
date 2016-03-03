@@ -67,7 +67,6 @@
     }
 }
 
-#pragma mark - Private
 
 - (void)jsq_maskView:(UIView *)view withImage:(UIImage *)image
 {
