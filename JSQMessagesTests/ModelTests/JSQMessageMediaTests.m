@@ -21,8 +21,8 @@
 
 @implementation FakeMedia
 
-- (UIView *)mediaView { return [UIView new]; }
-- (UIView *)mediaPlaceholderView { return [self mediaView]; }
+- (UIView *)mediaViewWithBubbleImage:(UIImage *)bubbleImage { return [UIView new]; }
+- (UIView *)mediaPlaceholderViewWithBubbleImage:(UIImage *)bubbleImage { return [self mediaViewWithBubbleImage:bubbleImage]; }
 - (CGSize)mediaViewDisplaySize { return CGSizeMake(50, 50); }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder { }

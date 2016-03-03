@@ -31,7 +31,7 @@
  *
  *  @return A newly created button.
  */
-+ (UIButton *)defaultAccessoryButtonItem;
++ (UIButton *)leftAccessoryButton;
 
 /**
  *  Creates and returns a new button that is styled as the default send button. 
@@ -39,6 +39,6 @@
  *
  *  @return A newly created button.
  */
-+ (UIButton *)defaultSendButtonItem;
++ (UIButton *)rightAccessoryButton;
 
 @end

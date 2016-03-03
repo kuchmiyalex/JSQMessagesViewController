@@ -87,7 +87,12 @@
 
 + (UIImage *)jsq_defaultAccessoryImage
 {
-    return [UIImage jsq_bubbleImageFromBundleWithName:@"clip"];
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"plus_icon"];
+}
+
++ (UIImage *)jsq_defaultMicImage
+{
+    return [UIImage jsq_bubbleImageFromBundleWithName:@"mic_bttn"];
 }
 
 + (UIImage *)jsq_defaultTypingIndicatorImage

@@ -20,7 +20,7 @@
 
 #import "JSQMessagesMediaPlaceholderView.h"
 #import "JSQMessagesMediaViewBubbleImageMasker.h"
-
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface JSQLocationMediaItem ()
 
@@ -175,6 +175,17 @@
 - (NSUInteger)hash
 {
     return super.hash ^ self.location.hash;
+}
+
+- (NSString *)mediaDataType {
+    return (NSString *)kUTTypeURL;
+}
+
+- (id)mediaData
+{
+    NSString *locationAsGoogleMapsString = [NSString stringWithFormat:@"http://maps.apple.com/?ll=%f,%f&z=18&q=%%20", self.coordinate.latitude, self.coordinate.longitude ];
+    NSURL *locationURL = [[NSURL alloc] initWithString:locationAsGoogleMapsString];
+    return locationURL;
 }
 
 - (NSString *)description

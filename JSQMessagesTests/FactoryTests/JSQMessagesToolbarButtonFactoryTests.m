@@ -24,13 +24,13 @@
 
 - (void)testDefaultSendButtonItem
 {
-    UIButton *button = [JSQMessagesToolbarButtonFactory defaultSendButtonItem];
+    UIButton *button = [JSQMessagesToolbarButtonFactory leftAccessoryButton];
     XCTAssertNotNil(button, @"Button should not be nil");
 }
 
 - (void)testDefaultAccessoryButtonItem
 {
-    UIButton *button = [JSQMessagesToolbarButtonFactory defaultAccessoryButtonItem];
+    UIButton *button = [JSQMessagesToolbarButtonFactory rightAccessoryButton];
     XCTAssertNotNil(button, @"Button should not be nil");
 }
 

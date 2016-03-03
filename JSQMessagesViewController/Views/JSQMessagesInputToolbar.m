@@ -63,8 +63,8 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 
     [self jsq_addObservers];
 
-    self.contentView.leftBarButtonItem = [JSQMessagesToolbarButtonFactory defaultAccessoryButtonItem];
-    self.contentView.rightBarButtonItem = [JSQMessagesToolbarButtonFactory defaultSendButtonItem];
+    self.contentView.leftBarButtonItem = [JSQMessagesToolbarButtonFactory leftAccessoryButton];
+    self.contentView.rightBarButtonItem = [JSQMessagesToolbarButtonFactory rightAccessoryButton];
 
     [self toggleSendButtonEnabled];
 }
@@ -106,14 +106,7 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 
 - (void)toggleSendButtonEnabled
 {
-    BOOL hasText = [self.contentView.textView hasText];
-
-    if (self.sendButtonOnRight) {
-        self.contentView.rightBarButtonItem.enabled = hasText;
-    }
-    else {
-        self.contentView.leftBarButtonItem.enabled = hasText;
-    }
+//    BOOL hasText = [self.contentView.textView hasText];
 }
 
 #pragma mark - Key-value observing
