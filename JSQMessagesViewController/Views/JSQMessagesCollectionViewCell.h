@@ -161,11 +161,16 @@
  */
 @property (weak, nonatomic) UIView *mediaView;
 
+
 /**
  *  Returns the underlying gesture recognizer for tap gestures in the avatarImageView of the cell.
  *  This gesture handles the tap event for the avatarImageView and notifies the cell's delegate.
  */
 @property (weak, nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
+
+@property (strong, nonatomic) IBOutlet UIButton *notSentButton;
+
+@property (strong, nonatomic) IBOutlet UIView *cellPendingView;
 
 #pragma mark - Class methods
 
@@ -202,5 +207,6 @@
  *  @warning Note that all message cells share the all actions registered here.
  */
 + (void)registerMenuAction:(SEL)action;
+
 
 @end
