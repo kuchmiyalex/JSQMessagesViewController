@@ -674,7 +674,15 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
 - (void)messagesInputToolbar:(JSQMessagesInputToolbar *)toolbar didPressRightBarButton:(UIButton *)sender
 {
-    [self didPressRightAccessoryButton: sender];
+    if (toolbar.sendButtonOnRight) {
+        [self didPressSendButton:sender
+                 withMessageText:[self jsq_currentlyComposedMessageText]
+                        senderId:self.senderId
+               senderDisplayName:self.senderDisplayName
+                            date:[NSDate date]];
+    }
+    else
+        [self didPressRightAccessoryButton: sender];
 }
 
 - (NSString *)jsq_currentlyComposedMessageText
@@ -717,22 +725,6 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     }
 
     [textView resignFirstResponder];
-}
-
--(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    if ([text isEqualToString: @"\n"])
-    {
-        [textView resignFirstResponder];
-        
-        [self didPressSendButton: nil
-                 withMessageText:[self jsq_currentlyComposedMessageText]
-                        senderId:self.senderId
-               senderDisplayName:self.senderDisplayName
-                            date:[NSDate date]];
-
-    }
-    return YES;
 }
 
 #pragma mark - Notifications

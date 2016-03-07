@@ -49,7 +49,7 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     self.jsq_isObserving = NO;
-    self.sendButtonOnRight = YES;
+    self.sendButtonOnRight = NO;
 
     self.preferredDefaultHeight = 44.0f;
     self.maximumHeight = NSNotFound;
@@ -106,7 +106,17 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 
 - (void)toggleSendButtonEnabled
 {
-//    BOOL hasText = [self.contentView.textView hasText];
+    BOOL hasText = [self.contentView.textView hasText];
+
+    if (hasText) {
+        self.sendButtonOnRight = YES;
+        self.contentView.rightBarButtonItem = [JSQMessagesToolbarButtonFactory rightSendButtonItem];
+    }
+    else
+    {
+        self.sendButtonOnRight = NO;
+        self.contentView.rightBarButtonItem = [JSQMessagesToolbarButtonFactory rightAccessoryButton];
+    }
 }
 
 #pragma mark - Key-value observing
@@ -137,7 +147,6 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
                                               forControlEvents:UIControlEventTouchUpInside];
             }
 
-            [self toggleSendButtonEnabled];
         }
     }
 }

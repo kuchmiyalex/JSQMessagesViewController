@@ -38,11 +38,34 @@
 + (UIButton *)rightAccessoryButton
 {
     UIImage *micImage = [UIImage jsq_defaultMicImage];
-    UIButton *micButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 34.0f, 32.0f)];
+    UIButton *micButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 50.0f, 32.0f)];
     [micButton setImage:micImage forState:UIControlStateNormal];
     micButton.contentMode = UIViewContentModeCenter;
     micButton.backgroundColor = [UIColor clearColor];
     return micButton;
 }
+
++ (UIButton *)rightSendButtonItem
+{
+    NSString *sendTitle = @"SEND";
+    UIColor* textColor = [UIColor colorWithRed: 21/255.0 green: 90/255.0 blue: 187/255.0 alpha:1.0];
+    UIButton *sendButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    [sendButton setTitle:sendTitle forState:UIControlStateNormal];
+    [sendButton setTitleColor:textColor forState:UIControlStateNormal];
+    [sendButton setTitleColor:[textColor jsq_colorByDarkeningColorWithValue:0.1f] forState:UIControlStateHighlighted];
+    [sendButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    
+    sendButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    sendButton.backgroundColor = [UIColor clearColor];
+    sendButton.tintColor = [UIColor jsq_messageBubbleBlueColor];
+    
+    sendButton.frame = CGRectMake(0.0f,
+                                  0.0f,
+                                  50.0f,
+                                  32.0f);
+    
+    return sendButton;
+}
+
 
 @end

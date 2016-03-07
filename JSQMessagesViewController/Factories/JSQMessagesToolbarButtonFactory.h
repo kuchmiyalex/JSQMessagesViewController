@@ -41,4 +41,6 @@
  */
 + (UIButton *)rightAccessoryButton;
 
++ (UIButton *)rightSendButtonItem;
+
 @end

@@ -129,7 +129,7 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     }
 
     self.rightBarButtonContainerView.hidden = NO;
-    self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+    self.rightHorizontalSpacingConstraint.constant = 0;
     self.rightBarButtonItemWidth = CGRectGetWidth(rightBarButtonItem.frame);
 
     [rightBarButtonItem setTranslatesAutoresizingMaskIntoConstraints:NO];
