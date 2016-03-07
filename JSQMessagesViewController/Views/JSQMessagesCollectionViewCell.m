@@ -124,6 +124,9 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
     self.messageBubbleTopLabel.font = [UIFont systemFontOfSize:12.0f];
     self.messageBubbleTopLabel.textColor = [UIColor lightGrayColor];
 
+    self.incomingUsername.font = [UIFont systemFontOfSize:12.0f];
+    self.incomingUsername.textColor = [UIColor lightGrayColor];
+
     self.cellBottomLabel.font = [UIFont systemFontOfSize:11.0f];
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
 
@@ -158,6 +161,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.cellTopLabel.text = nil;
     self.messageBubbleTopLabel.text = nil;
+    self.incomingUsername.text = nil;
     self.cellBottomLabel.text = nil;
 
     self.textView.dataDetectorTypes = UIDataDetectorTypeNone;
@@ -276,6 +280,7 @@ static NSMutableSet *jsqMessagesCollectionViewCellActions = nil;
 
     self.cellTopLabel.backgroundColor = backgroundColor;
     self.messageBubbleTopLabel.backgroundColor = backgroundColor;
+    self.incomingUsername.backgroundColor = backgroundColor;
     self.cellBottomLabel.backgroundColor = backgroundColor;
 
     self.messageBubbleImageView.backgroundColor = backgroundColor;

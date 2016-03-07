@@ -152,4 +152,6 @@
  */
 - (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedTextForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath;
 
+- (NSAttributedString *)collectionView:(JSQMessagesCollectionView *)collectionView attributedUsernameAtIndexPath:(NSIndexPath *)indexPath;
+
 @end
