@@ -526,8 +526,8 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
 
     cell.incomingUsername.attributedText = [collectionView.dataSource collectionView:collectionView attributedUsernameAtIndexPath:indexPath];
-    CGFloat bubbleTopLabelWidth = [cell.messageBubbleTopLabel.attributedText boundingRectWithSize: CGSizeMake(999, kJSQMessagesCollectionViewCellLabelHeightDefault) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size.width;
-    cell.sentIconLeading.constant = bubbleTopLabelWidth + 5;
+    CGFloat cellBottomLabelWidth = [cell.cellBottomLabel.attributedText boundingRectWithSize: CGSizeMake(999, kJSQMessagesCollectionViewCellLabelHeightDefault) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size.width;
+    cell.sentIconLeading.constant = cellBottomLabelWidth + 5;
 //    if (isOutgoingMessage) {
 //        cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, bubbleTopLabelInset);
 //    }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -81,8 +81,8 @@
                             <constraint firstAttribute="trailing" secondItem="y9b-D9-Q7W" secondAttribute="trailing" id="w9X-3u-BNY"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-dI-YDD" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="134" width="320" height="20"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Uc-dI-YDD" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
+                        <rect key="frame" x="40" y="134" width="244" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="cPs-M4-tjX"/>
@@ -99,28 +99,28 @@
                         <state key="normal" image="not_sent"/>
                     </button>
                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sent.png" translatesAutoresizingMaskIntoConstraints="NO" id="X7e-cx-2Qn">
-                        <rect key="frame" x="40" y="26" width="13" height="8"/>
+                        <rect key="frame" x="40" y="140" width="13" height="8"/>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="7Uc-dI-YDD" secondAttribute="trailing" id="1v4-5s-XmK"/>
                 <constraint firstItem="2zh-vR-QJW" firstAttribute="top" secondItem="p52-YN-yLu" secondAttribute="bottom" id="3Wx-g0-fTc"/>
+                <constraint firstItem="7Uc-dI-YDD" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" priority="750" id="5Tt-Kb-7H5"/>
                 <constraint firstItem="p52-YN-yLu" firstAttribute="trailing" secondItem="2zh-vR-QJW" secondAttribute="trailing" id="9F6-pB-JCa"/>
                 <constraint firstItem="AIa-6T-eqv" firstAttribute="top" secondItem="23f-xH-rkY" secondAttribute="top" id="9NM-Pz-vjv"/>
                 <constraint firstAttribute="trailing" secondItem="jxM-YD-sVG" secondAttribute="trailing" id="AwY-g7-f1T"/>
-                <constraint firstItem="X7e-cx-2Qn" firstAttribute="centerY" secondItem="p52-YN-yLu" secondAttribute="centerY" id="Ccm-K8-gTa"/>
+                <constraint firstItem="X7e-cx-2Qn" firstAttribute="centerY" secondItem="7Uc-dI-YDD" secondAttribute="centerY" id="Ccm-K8-gTa"/>
                 <constraint firstItem="p52-YN-yLu" firstAttribute="leading" secondItem="2zh-vR-QJW" secondAttribute="leading" id="EXD-2A-gdS"/>
                 <constraint firstItem="jxM-YD-sVG" firstAttribute="top" secondItem="23f-xH-rkY" secondAttribute="top" id="HYT-Tw-whz"/>
                 <constraint firstItem="AIa-6T-eqv" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" constant="-50" id="IN2-Sb-cZh"/>
                 <constraint firstAttribute="trailing" secondItem="X89-B1-aAd" secondAttribute="trailing" id="KLt-Ix-wDa"/>
-                <constraint firstItem="X7e-cx-2Qn" firstAttribute="leading" secondItem="p52-YN-yLu" secondAttribute="leading" id="MYq-Uf-BAs"/>
+                <constraint firstItem="X7e-cx-2Qn" firstAttribute="leading" secondItem="7Uc-dI-YDD" secondAttribute="leading" priority="750" id="MYq-Uf-BAs"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="bottom" id="Ngq-ew-t2K"/>
+                <constraint firstItem="7Uc-dI-YDD" firstAttribute="trailing" secondItem="2zh-vR-QJW" secondAttribute="trailing" id="QQ0-Uc-YaY"/>
                 <constraint firstItem="QIF-1D-GAs" firstAttribute="top" secondItem="2zh-vR-QJW" secondAttribute="top" id="c8h-dr-mTT"/>
                 <constraint firstItem="2zh-vR-QJW" firstAttribute="leading" secondItem="QIF-1D-GAs" secondAttribute="trailing" constant="-1" id="d2E-JJ-RPB"/>
                 <constraint firstAttribute="trailing" secondItem="AIa-6T-eqv" secondAttribute="trailing" constant="-50" id="ewS-xH-Uvd"/>
-                <constraint firstItem="7Uc-dI-YDD" firstAttribute="leading" secondItem="23f-xH-rkY" secondAttribute="leading" id="fiS-g3-X16"/>
                 <constraint firstAttribute="bottom" secondItem="7Uc-dI-YDD" secondAttribute="bottom" id="gXo-9b-b1W"/>
                 <constraint firstItem="7Uc-dI-YDD" firstAttribute="top" secondItem="X89-B1-aAd" secondAttribute="bottom" id="iiF-tn-5Ir"/>
                 <constraint firstItem="p52-YN-yLu" firstAttribute="top" secondItem="jxM-YD-sVG" secondAttribute="bottom" id="jBD-JV-AWk"/>
