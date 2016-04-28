@@ -46,8 +46,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
 
 
-@interface JSQMessagesViewController () <JSQMessagesInputToolbarDelegate,
-                                         JSQMessagesKeyboardControllerDelegate>
+@interface JSQMessagesViewController () <JSQMessagesKeyboardControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesCollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet JSQMessagesInputToolbar *inputToolbar;
@@ -306,6 +305,10 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 - (void)didPressRightAccessoryButton:(UIButton *)sender
 {
     NSAssert(NO, @"Error! required method not implemented in subclass. Need to implement %s", __PRETTY_FUNCTION__);
+}
+
+- (void)isPressingRightAccessoryButton:(UIButton *)sender
+{
 }
 
 - (void)finishSendingMessage
@@ -689,6 +692,13 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     }
     else
         [self didPressRightAccessoryButton: sender];
+}
+
+- (void)messagesInputToolbar:(JSQMessagesInputToolbar *)toolbar isPressingRightBarButton:(UIButton *)sender
+{
+    if (!toolbar.sendButtonOnRight) {
+        [self isPressingRightAccessoryButton: sender];
+    }
 }
 
 - (NSString *)jsq_currentlyComposedMessageText

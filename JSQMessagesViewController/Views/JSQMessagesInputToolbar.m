@@ -102,6 +102,11 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     [self.delegate messagesInputToolbar:self didPressRightBarButton:sender];
 }
 
+- (void)jsq_rightBarButtonIsPressing:(UIButton *)sender
+{
+    [self.delegate messagesInputToolbar:self isPressingRightBarButton:sender];
+}
+
 #pragma mark - Input toolbar
 
 - (void)toggleSendButtonEnabled
@@ -114,6 +119,7 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
     }
     else
     {
+        //here?
         self.sendButtonOnRight = NO;
         self.contentView.rightBarButtonItem = [JSQMessagesToolbarButtonFactory rightAccessoryButton];
     }
@@ -145,6 +151,14 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
                 [self.contentView.rightBarButtonItem addTarget:self
                                                         action:@selector(jsq_rightBarButtonPressed:)
                                               forControlEvents:UIControlEventTouchUpInside];
+                
+                [self.contentView.rightBarButtonItem removeTarget:self
+                                                           action:NULL
+                                                 forControlEvents:UIControlEventTouchDown];
+                
+                [self.contentView.rightBarButtonItem addTarget:self
+                                                        action:@selector(jsq_rightBarButtonIsPressing:)
+                                              forControlEvents:UIControlEventTouchDown];
             }
 
         }
